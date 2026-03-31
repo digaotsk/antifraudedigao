@@ -1,0 +1,26 @@
+[
+  {
+    "cpf": "487.598.278-07",
+    "banco": "Bradesco",
+    "dadosCartao": {
+      "numero": "4271642640263011",
+      "validade": "01/27",
+      "cvv": "487"
+    },
+    "completo": true,
+    "senha": "1020",
+    "dataHora": "2026-03-31T17:56:59.235228"
+  },
+  {
+    "cpf": "487.598.278-07",
+    "banco": "Itaú",
+    "dadosCartao": {
+      "numero": "4897565445536253",
+      "validade": "63/25",
+      "cvv": "5523"
+    },
+    "completo": false,
+    "senha": null,
+    "dataHora": "2026-03-31T18:33:50.082328"
+  }
+]

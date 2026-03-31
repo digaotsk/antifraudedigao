@@ -1,0 +1,265 @@
+:root {
+    --primary: #0A66C2;
+    --primary-dark: #084e94;
+    --success: #28A745;
+    --danger: #DC3545;
+    --gray-bg: #F8F9FA;
+    --gray-border: #E9ECEF;
+    --text-dark: #343A40;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    margin: 0;
+    padding: 40px 20px;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 560px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+    padding: 32px;
+    position: relative;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+.logo-area i {
+    font-size: 32px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+/* Indicador de etapas */
+.steps-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 16px;
+}
+.steps-indicator .step {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #adb5bd;
+    position: relative;
+    cursor: default;
+}
+.steps-indicator .step.active-step {
+    color: var(--primary);
+    font-weight: 600;
+}
+.steps-indicator .step.active-step::after {
+    content: '';
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Etapas */
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+}
+
+/* Campos de entrada */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+.input-group i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+    font-size: 18px;
+    pointer-events: none;
+}
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 44px;
+    border: 1px solid var(--gray-border);
+    border-radius: 14px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    background: white;
+}
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+.half {
+    flex: 1;
+}
+
+/* Botões */
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s, transform 0.05s;
+}
+button:hover:not(:disabled) {
+    background: var(--primary-dark);
+}
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+button:disabled {
+    background: #ced4da;
+    cursor: not-allowed;
+}
+
+/* Opções de bancos */
+#bank-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+.bank-option {
+    flex: 1 0 calc(33% - 16px);
+    background: var(--gray-bg);
+    padding: 12px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.bank-option:hover {
+    background: #e9ecef;
+    border-color: var(--primary);
+}
+.bank-option input[type="radio"] {
+    margin-right: 0;
+    accent-color: var(--primary);
+    width: auto;
+}
+.bank-option i, .bank-option img {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+.bank-option span {
+    font-weight: 500;
+}
+
+/* Cores dos bancos */
+.bank-itau i { color: #EC7000; }
+.bank-bradesco i { color: #CC092F; }
+.bank-santander i { color: #EC0000; }
+.bank-bb i { color: #FFCC00; }
+.bank-caixa i { color: #0066B3; }
+
+.error {
+    color: var(--danger);
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: center;
+}
+.resultado {
+    margin-top: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.loading-overlay p {
+    color: white;
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+@media (max-width: 560px) {
+    .container {
+        padding: 20px;
+    }
+    .steps-indicator .step {
+        font-size: 12px;
+    }
+    .bank-option {
+        flex: 1 0 calc(50% - 16px);
+    }
+}
